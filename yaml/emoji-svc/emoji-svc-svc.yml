@@ -14,7 +14,7 @@ metadata:
     ### Goes to Ambassador Labs docs: Log levels and debugging
     a8r.io/logs: https://www.getambassador.io/docs/edge-stack/latest/topics/running/running/#log-levels-and-debugging
     ### Goes DevPortal page
-    a8r.io/documentation: https://se01.mturner.k736.net/docs/
+    a8r.io/documentation: https://se1.mturner.k736.net/docs/
     ### Emojivoto repository
     a8r.io/repository: https://github.com/a8r-se/sol-eng-01-emojivoto.git 
     ### Ambassador Labs Support Portal Login Page
@@ -24,9 +24,9 @@ metadata:
     ### REQUIRES LOGIN: Datadog incident panel (Only shows demo screen)
     a8r.io/incidents: https://www.getambassador.io/docs/cloud/latest/service-catalog/concepts/ir/#incident-response-in-the-cloud-native-world
     ### Jaeger Trace Boutique App.  Frontend to Shipping & Product Catalog
-    a8r.io/uptime: https://monitoring.se01.mturner.k736.net/jaeger/trace/98ab4d0fa605c2f391340c299bfe2ef0 
+    a8r.io/uptime: https://monitoring.se1.mturner.k736.net/jaeger/trace/98ab4d0fa605c2f391340c299bfe2ef0 
     ### Login before presenting. In most cases login is cached and not required each time. Username = admin, PW = admin
-    a8r.io/performance: https://monitoring.se01.mturner.k736.net/grafana/d/R_NuxHVWk/ambassador-dashboard?refresh=1m&orgId=1 
+    a8r.io/performance: https://monitoring.se1.mturner.k736.net/grafana/d/R_NuxHVWk/ambassador-dashboard?refresh=1m&orgId=1 
     a8r.io/dependencies: web-svc.emojivoto, voting-svc.emojivoto
     ### ArgoRollOuts Annotations
     a8r.io/rollouts.scm.branch: main
