@@ -21,7 +21,7 @@ metadata:
     a8r.io/support: https://support.datawire.io/hc/en-us 
     ### Ambassador docs debugging page
     a8r.io/runbook: https://www.getambassador.io/docs/latest/topics/running/debugging/ 
-    ### REQUIRES LOGIN: Datadog incident panel (Only shows demo screen)
+    ### Goes to Ambassador docs response-in-the-cloud-native-world
     a8r.io/incidents: https://www.getambassador.io/docs/cloud/latest/service-catalog/concepts/ir/#incident-response-in-the-cloud-native-world
     ### Jaeger Trace Boutique App.  Frontend to Shipping & Product Catalog
     a8r.io/uptime: https://monitoring.se1.mturner.k736.net/jaeger/trace/98ab4d0fa605c2f391340c299bfe2ef0 
