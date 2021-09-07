@@ -17,6 +17,8 @@ spec:
       version: v11
   template:
     metadata:
+      annotations:
+        telepresence.getambassador.io/inject-traffic-agent: enabled    
       labels:
         app: vote-bot
         version: v11
