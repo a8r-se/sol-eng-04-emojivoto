@@ -1,0 +1,48 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: emoji-svc
+  namespace: emojivoto
+  annotations:
+    a8r.io/description: gRPC API for voting and leaderboard
+    a8r.io/owner: "Daniel Bryant" 
+    ### Opens slack and shows Daniel Bryant's slack profile
+    a8r.io/chat: https://datawire.slack.com/team/U8SPRLSQK
+    ### Issues page on application repository
+    a8r.io/bugs: "https://github.com/a8r-se/sol-eng-01-emojivoto/issues"
+    ### Goes to Ambassador Labs docs: Log levels and debugging
+    a8r.io/logs: https://www.getambassador.io/docs/edge-stack/latest/topics/running/running/#log-levels-and-debugging
+    ### Goes DevPortal page
+    a8r.io/documentation: https://se04.mturner.k736.net/docs/
+    ### Emojivoto repository
+    a8r.io/repository: https://github.com/a8r-se/sol-eng-01-emojivoto.git 
+    ### Ambassador Labs Support Portal Login Page
+    a8r.io/support: https://support.datawire.io/hc/en-us 
+    ### Ambassador docs debugging page
+    a8r.io/runbook: https://www.getambassador.io/docs/latest/topics/running/debugging/ 
+    ### Goes to Ambassador docs response-in-the-cloud-native-world
+    a8r.io/incidents: https://www.getambassador.io/docs/cloud/latest/service-catalog/concepts/ir/#incident-response-in-the-cloud-native-world
+    ### Jaeger Trace Boutique App.  Frontend to Shipping & Product Catalog
+    a8r.io/uptime: https://monitoring.se04.mturner.k736.net/jaeger/trace/98ab4d0fa605c2f391340c299bfe2ef0 
+    ### Login before presenting. In most cases login is cached and not required each time. Username = admin, PW = admin
+    a8r.io/performance: https://monitoring.se04.mturner.k736.net/grafana/d/R_NuxHVWk/ambassador-dashboard?refresh=1m&orgId=1 
+    a8r.io/dependencies: web-svc.emojivoto, voting-svc.emojivoto
+    ### ArgoRollOuts Annotations
+    a8r.io/rollouts.scm.branch: main
+    a8r.io/rollouts.scm.path: yaml/emojivoto/emoji-web
+    a8r.io/rollouts.image-repo.type: dockerhub"
+    a8r.io/rollouts.image-repo.name: caseykurosawa/emojivoto-web
+    a8r.io/rollouts.deployment: web
+    a8r.io/rollouts.mappings: emojivoto-mapping
+spec:
+  selector:
+    app: emoji-svc
+  ports:
+  - name: grpc
+    port: 8080
+    targetPort: 8080
+  - name: prom
+    port: 8801
+    targetPort: 8801
+---
