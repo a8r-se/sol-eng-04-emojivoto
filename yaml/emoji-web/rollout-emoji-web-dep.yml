@@ -1,0 +1,86 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  annotations:
+    getambassador.io/rolloutId: c431aed8-4b22-4806-a921-c676af1ca3e3
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/name: web
+    app.kubernetes.io/part-of: emojivoto
+    app.kubernetes.io/version: v11
+  name: web
+  namespace: emojivoto
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web-svc
+      version: v11
+  strategy:
+    canary:
+      canaryService: web-svc-canary
+      stableService: web-svc
+      steps:
+      - setWeight: 10
+      - pause:
+          duration: 12
+      - setWeight: 20
+      - pause:
+          duration: 12
+      - setWeight: 30
+      - pause:
+          duration: 12
+      - setWeight: 40
+      - pause:
+          duration: 12
+      - setWeight: 50
+      - pause:
+          duration: 12
+      - setWeight: 60
+      - pause:
+          duration: 12
+      - setWeight: 70
+      - pause:
+          duration: 12
+      - setWeight: 80
+      - pause:
+          duration: 12
+      - setWeight: 90
+      - pause:
+          duration: 12
+      - setWeight: 100
+      - pause:
+          duration: 12
+      trafficRouting:
+        ambassador:
+          mappings:
+          - emojivoto-mapping
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: web-svc
+        version: v11
+    spec:
+      containers:
+      - env:
+        - name: WEB_PORT
+          value: "8080"
+        - name: EMOJISVC_HOST
+          value: emoji-svc.emojivoto:8080
+        - name: VOTINGSVC_HOST
+          value: voting-svc.emojivoto:8080
+        - name: INDEX_BUNDLE
+          value: dist/index_bundle.js
+        image: docker.l5d.io/buoyantio/emojivoto-web:v11
+        name: web-svc
+        ports:
+        - containerPort: 8080
+          name: http
+        resources:
+          requests:
+            cpu: 100m
+      serviceAccountName: web
+status:
+  blueGreen: {}
+  canary: {}
