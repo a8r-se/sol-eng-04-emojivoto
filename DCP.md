@@ -29,59 +29,38 @@ On the Develpment card:
 ```yaml
 metadata:
   annotations:
-    ### Issues page on application repository
-    a8r.io/bugs: https://github.com/aes-t2/sol-eng-emojivoto/issues
-    ### Opens slack and shows Casey's slack profile
-    a8r.io/chat: https://datawire.slack.com/team/U0120PU7P7S
-    a8r.io/dependencies: web-svc.emojivoto-dev, voting-svc.emojivoto-dev
-    a8r.io/description: gRPC API for finding and listing emoji. Lanaguage = Go
-    ### Goes to the Ambassdor docs homepage
-    a8r.io/documentation: https://www.getambassador.io/docs/latest/
-    ### REQUIRES LOGIN: Datadog incident panel (Only shows demo screen)
-    a8r.io/incidents: https://app.datadoghq.com/incidents/settings
-    ### REQUIRES LOGIN: Datadog log aggregation panel (Only shows demo screen)
-    a8r.io/logs: https://app.datadoghq.com/logs/activation
-    a8r.io/owner: "@cakuros"
-    ### REQUIRES LOGIN (admin:prom-operator): Argo Rollouts Grafana dashboard
-    a8r.io/performance: https://obs.linkerd.amb-labs.io/grafana/d/fDNtJHg7k/argo-rollouts?orgId=1&refresh=5s
-    ### Emojivoto repository
-    a8r.io/repository: https://github.com/aes-t2/sol-eng-emojivoto
-    ### Ambassador docs debugging page
-    a8r.io/runbook: https://www.getambassador.io/docs/latest/topics/running/debugging/
-    ### Ambassador support webpage
-    a8r.io/support: https://support.datawire.io/hc/en-us
-    ### Linkerd emojivoto web pod Grafana dashboard
-    a8r.io/uptime: https://linkerd.amb-labs.io/grafana/d/linkerd-pod/linkerd-pod?orgId=1&refresh=1m&var-namespace=emojivoto&var-pod=web-755775fdf7-bh5jz&var-deployment=&var-inbound=All&var-outbound=All
-```
-
-On the Production card:
-
-```yaml
-metadata:
   annotations:
-    ### Issues page on application repository
-    a8r.io/bugs: https://github.com/aes-t2/sol-eng-emojivoto/issues
-    ### Opens slack and shows Casey's slack profile
-    a8r.io/chat: https://datawire.slack.com/team/U0120PU7P7S
-    a8r.io/dependencies: emoji-svc.emojivoto, voting-svc.emojivoto
     a8r.io/description: gRPC API for voting and leaderboard
-    ### Goes to the Ambassdor docs homepage
-    a8r.io/documentation: https://www.getambassador.io/docs/latest/
-    ### REQUIRES LOGIN: Datadog incident panel (Only shows demo screen)
-    a8r.io/incidents: https://app.datadoghq.com/incidents/settings
-    ### REQUIRES LOGIN: Datadog log aggregation panel (Only shows demo screen)
-    a8r.io/logs: https://app.datadoghq.com/logs/activation
-    a8r.io/owner: "@cakuros"
-    ### REQUIRES LOGIN (admin:prom-operator): Argo Rollouts Grafana dashboard
-    a8r.io/performance: https://obs.linkerd.amb-labs.io/grafana/d/fDNtJHg7k/argo-rollouts?orgId=1&refresh=5s
+    a8r.io/owner: "@danielbryantuk" 
+    ### Opens slack and shows Daniel Bryant's slack profile
+    a8r.io/chat: https://datawire.slack.com/team/U8SPRLSQK
+    ### Issues page on application repository
+    a8r.io/bugs: "https://github.com/a8r-se/sol-eng-01-emojivoto/issues"
+    ### Goes to Ambassador Labs docs: Log levels and debugging
+    a8r.io/logs: https://www.getambassador.io/docs/edge-stack/latest/topics/running/running/#log-levels-and-debugging
+    ### Goes DevPortal page
+    a8r.io/documentation: https://se04.mturner.k736.net/docs/
     ### Emojivoto repository
-    a8r.io/repository: https://github.com/aes-t2/sol-eng-emojivoto
+    a8r.io/repository: https://github.com/a8r-se/sol-eng-01-emojivoto.git 
+    ### Ambassador Labs Support Portal Login Page
+    a8r.io/support: https://support.datawire.io/hc/en-us 
     ### Ambassador docs debugging page
-    a8r.io/runbook: https://www.getambassador.io/docs/latest/topics/running/debugging/
-    ### Ambassador support webpage
-    a8r.io/support: https://support.datawire.io/hc/en-us
-    ### Linkerd emojivoto web pod Grafana dashboard
-    a8r.io/uptime: https://linkerd.amb-labs.io/grafana/d/linkerd-pod/linkerd-pod?orgId=1&refresh=1m&var-namespace=emojivoto&var-pod=web-755775fdf7-bh5jz&var-deployment=&var-inbound=All&var-outbound=All
+    a8r.io/runbook: https://www.getambassador.io/docs/latest/topics/running/debugging/ 
+    ### Opens Ambassador Labs' page "Incident response in the cloud-native world"
+    a8r.io/incidents: https://www.getambassador.io/docs/cloud/latest/service-catalog/concepts/ir/#incident-response-in-the-cloud-native-world
+    ### Jaeger Trace Boutique App.  Frontend to Shipping & Product Catalog
+    a8r.io/uptime: https://monitoring.se04.mturner.k736.net/jaeger/search?end=1633019820000000&limit=20&lookback=custom&maxDuration&minDuration&service=productcatalogservice&start=1626062400000000
+    ### Login before presenting. In most cases login is cached and not required each time. Username = admin, PW = admin
+    a8r.io/performance: https://monitoring.se04.mturner.k736.net/grafana/d/R_NuxHVWk/ambassador-dashboard?refresh=1m&orgId=1 
+    a8r.io/dependencies: emoji-svc.emojivoto, voting-svc.emojivoto
+    ### ArgoRollOuts Annotations
+    a8r.io/rollouts.scm.branch: "main"
+    a8r.io/rollouts.scm.path: "yaml/emoji-web"
+    a8r.io/rollouts.image-repo.type: "dockerhub"
+    a8r.io/rollouts.image-repo.name: "caseykurosawa/emojivoto-web"
+    a8r.io/rollouts.deployment: "web"
+    a8r.io/rollouts.mappings: "emojivoto-mapping"
+spec:
 ```
 
 ## Telepresence demo
@@ -92,7 +71,7 @@ Telepresence 2.3.1
 
 Tested on MacOS 11.4 Big Sur.  Version number in parenthesis was the version tested (6/15/2021).
 
-Requires membership to `aes-t2` organization (https://github.com/aes-t2/).  See `@mturner` for access.
+Requires membership to `aes-t2` organization (https://github.com/a8r-se/).  See `@mturner` for access.
 
 - Docker (20.10.6)
 - go (1.16.5)
@@ -106,14 +85,14 @@ Requires membership to `aes-t2` organization (https://github.com/aes-t2/).  See 
 Clone this repository and cd into folder:
 
 ```sh
-git clone https://github.com/aes-t2/sol-eng-emojivoto
-cd sol-eng-emojivoto
+git clone https://github.com/a8r-se/sol-eng-04-emojivoto
+cd sol-eng-04-emojivoto
 ```
 
 Export Kubeconfig:
 
 ```sh
-export KUBECONFIG=$(pwd)/cluster-setup/solutions-eng-linkerd.yaml
+export KUBECONFIG=$(pwd)/cluster-setup/sol-eng-04.yaml
 ```
 
 Build dependencies and generate protobuf code:
@@ -127,7 +106,7 @@ make build
 #### Show emojivoto-dev page
 
 ```sh
-open https://emojivoto-dev.linkerd.amb-labs.io
+open emojivoto.se04.mturner.k736.net
 ```
 
 #### Show emojivoto-dev service catalog
@@ -161,7 +140,7 @@ telepresence intercept web -n emojivoto-dev --port 8080:80 -u=true
       [default: y]: y
   4/4: If required by your ingress, specify a different layer 5 hostname
     (TLS-SNI, HTTP "Host" header) to access this service.
-      [default: ambassador.ambassador]: emojivoto-dev.linkerd.amb-labs.io
+      [default: ambassador.ambassador]: emojivoto.se04.mturner.k736.net
 ```
 
 Check out new test code:
